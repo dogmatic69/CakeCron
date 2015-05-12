@@ -1,6 +1,13 @@
 <?php
 App::uses('CakeEventManager', 'Event');
 
+/**
+ * CakeCronEventManager
+ * 
+ * Extend the CakeEventManager to provide some handy methods for running the crons
+ * 
+ * @author Carl Sutton <dogmatic69>
+ */
 class CakeCronEventManager extends CakeEventManager {
 
 /**
@@ -21,9 +28,9 @@ class CakeCronEventManager extends CakeEventManager {
  *
  * If this is not done in cli the cron will die
  *
+ * @throws InvalidArgumentException When event key is missing or callable is not an instance of CakeEventListener.
+ *
  * @return void
- * @throws InvalidArgumentException When event key is missing or callable is not an
- *   instance of CakeEventListener.
  */
 	public function attach($callable, $eventKey = null, $options = array()) {
 		if (self::_isCli()) {
@@ -36,6 +43,7 @@ class CakeCronEventManager extends CakeEventManager {
  * Returns a list of all listeners for an eventKey in the order they should be called
  *
  * @param string $eventKey Event key.
+ *
  * @return array
  */
 	public function listeners($eventKey) {

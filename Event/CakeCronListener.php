@@ -1,6 +1,13 @@
 <?php
 App::uses('CakeEventListener', 'Event');
 
+/**
+ * CakeCronListener
+ * 
+ * Extend the CakeEventListener to provide some handy methods for running the crons
+ * 
+ * @author Carl Sutton <dogmatic69>
+ */
 class CakeCronListener implements CakeEventListener {
 
 /**
@@ -92,6 +99,11 @@ class CakeCronListener implements CakeEventListener {
 		return true;
 	}
 
+/**
+ * Get the crontab entry
+ *
+ * @return 
+ */
 	public function crontab() {
 		return $this->crontab;
 	}

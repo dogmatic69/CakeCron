@@ -1,12 +1,34 @@
 <?php
 App::uses('File', 'Utilities');
 
+/**
+ * CakeCronPid
+ * 
+ * Class used to stop the same process excecuting multiple times
+ * 
+ * @author Carl Sutton <dogmatic69>
+ */
 class CakeCronPid extends File {
 
+/**
+ * Temp path
+ * 
+ * @var string
+ */
 	protected $_tmpPath = TMP;
 
+/**
+ * Folder to store PID files
+ * 
+ * @var string
+ */
 	protected $_pidFolder = 'cake-cron';
 
+/**
+ * Current job being run
+ * 
+ * @var string
+ */
 	protected $_job = null;
 
 /**
@@ -78,6 +100,11 @@ class CakeCronPid extends File {
 
 	}
 
+/**
+ * As this is extending the File class, we don't need all the functionality
+ *
+ * @throws CakeException anytime this method is called
+ */
 	public function append($data, $force = false) {
 		throw new CakeException('Not implemented');
 	}
