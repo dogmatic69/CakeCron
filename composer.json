@@ -1,9 +1,9 @@
 {
-	"name": "dogmatic69/cake-cron",
+	"name": "dogmatic69/CakeCron",
 	"description": "A cron manager plugin for CakePHP",
 	"type": "cakephp-plugin",
-	"keywords": ["cakephp", "job", "queue", "processing", "worker"],
-	"homepage": "https://github.com/dogmatic69/cake-cron",
+	"keywords": ["cakephp", "cron", "crontab", "processing", "periodic"],
+	"homepage": "https://github.com/dogmatic69/CakeCron",
 	"license": "MIT",
 	"authors": [
 		{
