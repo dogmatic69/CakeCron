@@ -1,5 +1,5 @@
 {
-	"name": "dogmatic69/CakeCron",
+	"name": "dogmatic69/cake-cron",
 	"description": "A cron manager plugin for CakePHP",
 	"type": "cakephp-plugin",
 	"keywords": ["cakephp", "cron", "crontab", "processing", "periodic"],
