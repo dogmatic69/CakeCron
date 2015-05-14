@@ -3,9 +3,9 @@ App::uses('CakeEventManager', 'Event');
 
 /**
  * CakeCronEventManager
- * 
+ *
  * Extend the CakeEventManager to provide some handy methods for running the crons
- * 
+ *
  * @author Carl Sutton <dogmatic69>
  */
 class CakeCronEventManager extends CakeEventManager {
@@ -52,7 +52,7 @@ class CakeCronEventManager extends CakeEventManager {
 		foreach ($listeners as $k => $listener) {
 			$crontab = null;
 			if (!empty($listener['callable'][0]) && method_exists($listener['callable'][0], 'crontab')) {
-				$crontab = $listener['callable'][0]->crontab();
+				$crontab = $listener['callable'][0]->crontab($eventKey);
 			} else if (!empty($listener['passParams']['crontab'])) {
 				$crontab = $listener['passParams']['crontab'];
 			}
@@ -69,11 +69,11 @@ class CakeCronEventManager extends CakeEventManager {
 
 /**
  * Check if the code is being run in CLI
- * 
+ *
  * @return boolean
  */
 	protected function _isCli() {
 		return php_sapi_name() == 'cli';
 	}
-	
+
 }
