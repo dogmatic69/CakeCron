@@ -3,7 +3,7 @@ App::uses('AppShell', 'Console/Command');
 
 /**
  * CakeCronShell
- * 
+ *
  * @author Carl Sutton <dogmatic69>
  */
 class CakeCronShell extends AppShell {
@@ -51,20 +51,20 @@ class CakeCronShell extends AppShell {
 
 /**
  * The main cron running method
- * 
+ *
  * @return void
  */
 	public function run() {
 		$Event = new CakeCronEvent('CakeCron.run', new stdClass(), array());
-		$this->getEventManager()->dispatch($Event);
+		CakeCronEventManager::instance()->dispatch($Event);
 	}
 
 /**
  * Check the status of the cron (not yet implemented)
- * 
+ *
  * @return void
  */
 	public function status() {
-		
+
 	}
 }
