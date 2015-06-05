@@ -1,5 +1,7 @@
 <?php
 App::uses('CakeEventListener', 'Event');
+App::uses('CakeCronEventManager', 'CakeCron.Event');
+
 
 /**
  * CakeCronListener
@@ -28,6 +30,25 @@ class CakeCronListener implements CakeEventListener {
 		if (empty($this->crontab)) {
 			throw new CronTabEntryNotDefinedException();
 		}
+	}
+
+/**
+ * attach instance of the class to the event manager
+ *
+ * @throws InvalidArgumentException if trying to atach this class as the event.
+ *
+ * @return void
+ */
+	public static function attach() {
+		if (get_called_class() == __CLASS__) {
+			throw new InvalidArgumentException('Cant attach CakeCronListener as an event');
+		}
+
+		if (php_sapi_name() != 'cli') {
+			return false;
+		}
+
+		return CakeCronEventManager::instance()->attach(new static());
 	}
 
 /**

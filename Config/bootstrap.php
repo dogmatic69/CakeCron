@@ -1,4 +1,5 @@
 <?php
+include CakePlugin::path('CakeCron') . 'Error' . DS . 'exceptions.php';
 Configure::load('CakeCron.config');
 
 App::uses('CakeCronEvent', 'CakeCron.Event');
