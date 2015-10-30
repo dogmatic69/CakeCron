@@ -1,7 +1,7 @@
 <?php
-namespace CakeCron\Event;
+namespace CakeCron\Cron;
 
-use CakeCron\Event\Manager;
+use CakeCron\Cron\Manager;
 use Cake\Event\EventListenerInterface;
 
 /**
@@ -9,7 +9,7 @@ use Cake\Event\EventListenerInterface;
  *
  * Extend the CakeEventListener to provide some handy methods for running the crons
  *
- * @package dogmatic69.CakeCron.Event
+ * @package dogmatic69.CakeCron.Cron
  *
  * @author Carl Sutton <dogmatic69@gmail.com>
  */

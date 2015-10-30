@@ -1,7 +1,7 @@
 <?php
-namespace CakeCron\Event;
+namespace CakeCron\Cron;
 
-use CakeCron\Event\Listener;
+use CakeCron\Cron\Listener;
 use Cake\Event\Event as CakeEvent;
 
 /**
@@ -14,7 +14,7 @@ use Cake\Event\Event as CakeEvent;
  * can create multiple instances of this object to manage local events or keep a single instance
  * and pass it around to manage all events in your app.
  *
- * @package dogmatic69.CakeCron.Event
+ * @package dogmatic69.CakeCron.Cron
  *
  * @author Carl Sutton <dogmatic69@gmail.com>
  */

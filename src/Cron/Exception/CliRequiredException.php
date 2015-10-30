@@ -1,10 +1,12 @@
 <?php
-namespace CakeCron\Event\Exception;
+namespace CakeCron\Cron\Exception;
 
-use CakeCron\Event\Exception\EventException;
+use CakeCron\Cron\Exception\EventException;
 
 /**
  * used when the cron is called from non-cli
+ *
+ * @package dogmatic69.CakeCron.Cron
  *
  * @author Carl Sutton <dogmatic69@gmail.com>
  */
